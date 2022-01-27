@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <%- include('./partials/link') %>
+    <title><%=title%></title>
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+    <table
+      class="table table-striped table-hover align-middle"
+    >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Columna</th>
+          <th scope="col">Descripción del campo</th>
+          <th scope="col">Tipo Dato</th>
+          <th scope="col">Ejemplo</th>
+          <th scope="col">Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">id_bpin</th>
+          <td>
+            BPIN: código único de identificación del
+            proyecto de inversión del DNP o ID: número de
+            identificación del proyecto
+          </td>
+          <td>Cadena de texto</td>
+          <td>6490-788745</td>
+          <td>
+            El campo puede contener números, texto y
+            caracteres especiales.
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">id</th>
+          <td>
+            ID número de identificación del proyecto, si lo
+            asigna la entidad o puede ser el número del
+            contrato
+          </td>
+          <td>Cadena de texto</td>
+          <td>LL45-122</td>
+          <td>El campo es libre para la entidad</td>
+        </tr>
+
+        <tr>
+          <th scope="row">sector</th>
+          <td>
+            Refiere al sector al cual pertenece la obra de
+            infraestructura.
+          </td>
+          <td>Cadena de texto</td>
+          <td>EDUCACIÓN</td>
+          <td>
+            El campo debe estar diligenciar con las
+            siguientes opciones: (VIVIENDA, SALUD,
+            EDUCACIÓN, TRANSPORTE(vías, puentes), AGUA
+            POTABLE Y SANEAMIENTO BÁSICO, CARCELARIO,
+            DEPORTIVO,JUSTICIA, OTRO)
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">municipio_obra</th>
+          <td>Municipio donde se encuentra la obra</td>
+          <td>Cadena texto</td>
+          <td>Bello</td>
+          <td>
+            Formato texto, en mayúsculas y sin caracteres
+            especiales
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">departamento_obra</th>
+          <td>Departamento donde se encuentra la obra</td>
+          <td>Cadena texto</td>
+          <td>Santander</td>
+          <td>
+            Formato texto, en mayusculas y sin caracteres
+            especiales
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">codigo_divipola_municipio</th>
+          <td>
+            Código divipola del municipio donde se encuentra
+            la obra
+          </td>
+          <td>Cadena texto</td>
+          <td>05088</td>
+          <td>
+            Formato texto y extensión mínima 5 dígitos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">nombre_proyecto</th>
+          <td>Nombre del proyecto de obra</td>
+          <td>Cadena de texto</td>
+          <td>Construcción puente calle 72</td>
+          <td>No debe contener símbolos.</td>
+        </tr>
+
+        <tr>
+          <th scope="row">objeto_proyecto</th>
+          <td>
+            Detalle del objeto contractual como aparece en
+            la minuta del contrato
+          </td>
+          <td>Cadena de texto</td>
+          <td>
+            Reconstruccion de la estructura de viviendas
+            afectadas en el departamento de Antioquia
+          </td>
+          <td>No debe contener símbolos.</td>
+        </tr>
+
+        <tr>
+          <th scope="row">unidad_funcional_acuerdo_obra</th>
+          <td>
+            Si el proyecto contiene varias unidades
+            funcionales, registre el nombre. En caso que el
+            proyecto tenga un contrato marco, mencione el
+            nombre del acuerdo específico de obra del
+            colegio u hospital. Si no aplica las opciones
+            anteriores, es el mismo nombre del proyecto"
+          </td>
+          <td>Cadena de texto</td>
+          <td>FNGRD-127 - Mejoramiento Viviendas</td>
+          <td>Cadena de texto solo símbolos (,+,-)</td>
+        </tr>
+
+        <tr>
+          <th scope="row">fecha_inicio</th>
+          <td>
+            Fecha de inicio de la obra según interventoría o
+            acta de inicio
+          </td>
+          <td>Fecha</td>
+          <td>2020-11-20</td>
+          <td>
+            (AAAA-MM-DD) Año de cuatro dígitos, mes de dos
+            dígitos y día de dos dígitos separados por -,
+            sin dígitos de hora o símbolos diferentes a -
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">fecha_inicial_terminacion</th>
+          <td>
+            Fecha de inicio de la obra según interventoría o
+            acta de inicio
+          </td>
+          <td>Fecha</td>
+          <td>2020-11-20</td>
+          <td>
+            (AAAA-MM-DD) Año de cuatro dígitos, mes de dos
+            dígitos y día de dos dígitos separados por -,
+            sin dígitos de hora o símbolos diferentes a -
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">fecha_final_terminacion</th>
+          <td>
+            Fecha de inicio de la obra según interventoría o
+            acta de inicio
+          </td>
+          <td>Fecha</td>
+          <td>2020-11-20</td>
+          <td>
+            (AAAA-MM-DD) Año de cuatro dígitos, mes de dos
+            dígitos y día de dos dígitos separados por -,
+            sin dígitos de hora o símbolos diferentes a -
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">valor_contrato_inicial</th>
+          <td>Valor inicial del contrato</td>
+          <td>Decimal</td>
+          <td>1000364540,00</td>
+          <td>
+            Valor en (pesos) (unico separador ,(coma) para
+            centavos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">valor_contrato_final</th>
+          <td>
+            Valor final del contrato teniendo en cuenta
+            adiciones y reducciones
+          </td>
+          <td>Decimal</td>
+          <td>1500364540,00</td>
+          <td>
+            Valor en (pesos) (unico separador ,(coma) para
+            centavos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">avance_fisico_inicial</th>
+          <td>
+            % avance físico que se esperaba a la fecha de
+            reporte, según cronograma inicial de la obra
+          </td>
+          <td>Decimal</td>
+          <td>0,80</td>
+          <td>
+            Valores entre 0 y 1 sin símbolos o separador
+            decimal diferente a (,) coma
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">avance_fisico_ejecutado</th>
+          <td>
+            % avance físico acumulado a la fecha de reporte,
+            es decir el avance que tiene la obra en
+            porcentaje
+          </td>
+          <td>Decimal</td>
+          <td>0,3</td>
+          <td>
+            Valores entre 0 y 1 sin símbolos o separador
+            decimal diferente a (,) coma
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">avance_financiero_ejecutado</th>
+          <td>
+            % avance financiero real a la fecha de reporte,
+            de acuerdo al presupuesto que se le ha entregado
+            al contratista para ejecutar la obra
+          </td>
+          <td>Decimal</td>
+          <td>0,3</td>
+          <td>
+            Valores entre 0 y 1 sin símbolos o separador
+            decimal diferente a (,) coma
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">num_contrato</th>
+          <td>Número del contrato marco o de obra</td>
+          <td>Cadena de texto</td>
+          <td>1111111-111</td>
+          <td>Cadena de texto solo símbolos (-)</td>
+        </tr>
+
+        <tr>
+          <th scope="row">cantidad_de_suspenciones</th>
+          <td>
+            Cantidad acumulada de suspensiones del proyecto
+          </td>
+          <td>Entero</td>
+          <td>9</td>
+          <td>
+            Cantidad acumulada de suspensiones del proyecto
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">cantidad_de_prorrogas</th>
+          <td>
+            Cantidad acumulada de prórrogas del proyecto
+          </td>
+          <td>Entero</td>
+          <td>9</td>
+          <td>
+            Cantidad acumulada de prórrogas del proyecto
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">tiempo_suspensiones</th>
+          <td>
+            Cantidad acumulada de días de suspensiones del
+            proyecto
+          </td>
+          <td>Entero</td>
+          <td>20</td>
+          <td>
+            Cantidad acumulada de días de suspensiones del
+            proyecto
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">tiempo_prorrogas</th>
+          <td>
+            Cantidad acumulada de días de prórrogas del
+            proyecto
+          </td>
+          <td>Entero</td>
+          <td>20</td>
+          <td>
+            Cantidad acumulada de días de prórrogas del
+            proyecto
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">cantidad_adiciones</th>
+          <td>
+            Cantidad acumulada de adiciones del proyecto
+          </td>
+          <td>Entero</td>
+          <td>2</td>
+          <td>
+            Cantidad de adiciones realizadas sin símbolos,
+            caracteres, solo numeros
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">valor_total_adiciones</th>
+          <td>
+            Valor acumulado en pesos de adiciones del
+            proyecto
+          </td>
+          <td>Decimal</td>
+          <td>25000000,55</td>
+          <td>
+            Valor en (pesos) (unico separador ,(coma) para
+            centavos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">origen_recursos</th>
+          <td>
+            Describe la fuente del origen de los recursos,
+            con los cuales se financiará el proyecto.
+          </td>
+          <td>Cadena de texto</td>
+          <td>ENTREGADO</td>
+          <td>
+            El campo tipo texto Diligenciar el campo con
+            alguna de las siguientes opciones: PGN, SGR,
+            MIXTOS, SGP, PROPIOS, OTRO. En caso de ser
+            MIXTOS especificar la combinación de los
+            recursos"
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">valor_comprometido</th>
+          <td>
+            Valor acumulado de los compromisos del proyecto
+          </td>
+          <td>Decimal</td>
+          <td>25000000,55</td>
+          <td>
+            Valor en (pesos) (unico separador ,(coma) para
+            centavos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">valor_obligado</th>
+          <td>
+            Valor acumulado de las obligaciones del proyecto
+          </td>
+          <td>Decimal</td>
+          <td>25000000,55</td>
+          <td>
+            Valor en (pesos) (unico separador ,(coma) para
+            centavos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">valor_pagado</th>
+          <td>Valor acumulado de los pagos del proyecto</td>
+          <td>Decimal</td>
+          <td>25000000,55</td>
+          <td>
+            Valor en (pesos) (unico separador ,(coma) para
+            centavos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">valor_anticipo</th>
+          <td>Valor del anticipo del proyecto</td>
+          <td>Decimal</td>
+          <td>25000000,55</td>
+          <td>
+            Valor en (pesos) (unico separador ,(coma) para
+            centavos
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">latitud</th>
+          <td>
+            Latitud de la obra (se diligencia para obras de
+            colegios, hospitales, puertos, aeropuertos, u
+            otra obra diferente a carreteras o vías férreas)
+            coordenadas Formato GRADOS DECIMALES"
+          </td>
+          <td>Decimal</td>
+          <td>6,33732</td>
+          <td>
+            Formato entre -4 y 14 coordenadas geográficas
+            territorio colombiano
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">longitud</th>
+          <td>
+            Longitud de la obra (se diligencia para obras de
+            colegios, hospitales, puertos,aeropuertos, u
+            otra obra diferente a carreteras o vías férreas)
+            coordenadas Formato GRADOS DECIMALES
+          </td>
+          <td>Decimal</td>
+          <td>-75,55795</td>
+          <td>
+            Formato entre -65 y -81 coordenadas geográficas
+            territorio colombiano
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">latitud_inicial</th>
+          <td>
+            Punto inicial de la latitud Solo aplica para
+            (vías, vía ferrea, jarillones de ríos,
+            malecones, alamedas o cualquier otro proyecto
+            con una extensión lineal) Formato GRADOS
+            DECIMALES"
+          </td>
+          <td>Decimal</td>
+          <td>4,570868</td>
+          <td>
+            Formato entre -4 y 14 coordenadas geográficas
+            territorio colombiano
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">latitud_final</th>
+          <td>
+            Punto final de la latitud Solo aplica para
+            (vías, vía ferrea, jarillones de ríos,
+            malecones, alamedas o cualquier otro proyecto
+            con una extensión lineal) Formato GRADOS
+            DECIMALES"
+          </td>
+          <td>Decimal</td>
+          <td>4,570868</td>
+          <td>
+            Formato entre -4 y 14 coordenadas geográficas
+            territorio colombiano
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">longitud_inicial</th>
+          <td>
+            Punto inicial de la longitud Solo aplica para
+            (vías, vía ferrea, jarillones de ríos,
+            malecones, alamedas o cualquier otro proyecto
+            con una extensión lineal) Formato GRADOS
+            DECIMALES
+          </td>
+          <td>Decimal</td>
+          <td>-74,297333</td>
+          <td>
+            Formato entre -65 y -81 coordenadas geográficas
+            territorio colombiano
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">longitud_final</th>
+          <td>
+            Punto final de la longitud Solo aplica para
+            (vías, vía ferrea, jarillones de ríos,
+            malecones, alamedas o cualquier otro proyecto
+            con una extensión lineal) Formato GRADOS
+            DECIMALES"
+          </td>
+          <td>Decimal</td>
+          <td>-74,297333</td>
+          <td>
+            Formato entre -65 y -81 coordenadas geográficas
+            territorio colombiano
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">estado</th>
+          <td>
+            Estado de la obra ( ENTREGADO, EN EJECUCION,
+            SUSPENDIDO, EN REASIGNACIÓN, TERMINADO, EN
+            PRESUNTO INCUMPLIMIENTO, EN CESION, VENCIDO,
+            ADJUDICADO)
+          </td>
+          <td>Cadena de texto</td>
+          <td>ENTREGADO</td>
+          <td>
+            El campo debe estar diligenciar con las
+            siguientes opciones: (POR INICIAR,EN EJECUCION,
+            SUSPENDIDO, LIQUIDADO, TERMINADO, EN CESION, EN
+            REASIGNACION, EN PROCESO DE INCUMPLIMIENTO,
+            VENCIDO)
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">nombre_del_contratista</th>
+          <td>
+            Escribir el nombre de la empresa contratista
+          </td>
+          <td>Cadena de texto</td>
+          <td>OBRAR EJEMPLO SAS</td>
+          <td>No debe contener símbolos.</td>
+        </tr>
+
+        <tr>
+          <th scope="row">nit_contratista</th>
+          <td>
+            Escribir el NIT del nombre del contratista sin
+            dígito de verificación
+          </td>
+          <td>Entero</td>
+          <td>909111111</td>
+          <td>
+            Debe contener solo números, no debe contener
+            símbolos ni dígito de verificación
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">cesion</th>
+          <td>
+            Si el proyecto tuvo una cesión o reasiganción
+            del contratista
+          </td>
+          <td>Cadena de texto</td>
+          <td>SI</td>
+          <td>No debe contener símbolos.</td>
+        </tr>
+
+        <tr>
+          <th scope="row">nuevo_contratista</th>
+          <td>
+            Registre el nombre o razón social del
+            contratista sin puntos, comas y tildes, en caso
+            de cesión o reasignación del contratista
+            (FUNDACION ALIANZA Y EVENTOS SAS)
+          </td>
+          <td>Cadena de texto</td>
+          <td>CONSORCIO NORTE SAS</td>
+          <td>No debe contener símbolos.</td>
+        </tr>
+
+        <tr>
+          <th scope="row">observaciones</th>
+          <td>Observaciones del contrato</td>
+          <td>Cadena de texto</td>
+          <td>
+            Se encuentra suspendido por bloqueos en las vias
+            de acceso
+          </td>
+          <td>Solo texto sin símbolos</td>
+        </tr>
+
+        <tr>
+          <th scope="row">link_secop</th>
+          <td>
+            Url de la pagina de la plataforma SECOP donde se
+            encuentra la información publicada
+          </td>
+          <td>Cadena de texto</td>
+          <td>https://community.secop.gov.co/</td>
+          <td>DEBE SER UNA URL VALIDA</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
